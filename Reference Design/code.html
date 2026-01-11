@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocGenie Dark Theme Documentation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#000000",
+                        "dark-border": "#222222",
+                        "dark-surface": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #222222;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #333333;
+        }
+        .code-syntax-keyword { color: #135bec; }
+        .code-syntax-string { color: #10b981; }
+        .code-syntax-comment { color: #6b7280; }
+        .code-syntax-function { color: #818cf8; }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display antialiased selection:bg-primary/30 selection:text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex h-16 w-full items-center justify-between border-b border-dark-border bg-background-dark/80 px-6 backdrop-blur-md">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">DocGenie</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-white hover:text-primary transition-colors" href="#">Docs</a>
+<a class="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">API</a>
+<a class="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">Changelog</a>
+<a class="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">Showcase</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-[18px]">search</span>
+<input class="h-9 w-64 rounded-lg border border-dark-border bg-dark-surface pl-10 pr-4 text-xs text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Search documentation..." type="text"/>
+<kbd class="absolute right-2 top-1/2 -translate-y-1/2 rounded border border-dark-border bg-background-dark px-1.5 py-0.5 text-[10px] text-zinc-500 font-mono">⌘K</kbd>
+</div>
+<div class="flex gap-2">
+<button class="flex h-9 w-9 items-center justify-center rounded-lg border border-dark-border bg-dark-surface hover:bg-zinc-900 text-zinc-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">dark_mode</span>
+</button>
+<button class="flex h-9 w-9 items-center justify-center rounded-lg border border-dark-border bg-dark-surface hover:bg-zinc-900 text-zinc-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</button>
+</div>
+</div>
+</header>
+<div class="mx-auto flex w-full max-w-[1440px]">
+<!-- Left Sidebar Navigation -->
+<aside class="sticky top-16 hidden h-[calc(100vh-64px)] w-64 shrink-0 overflow-y-auto border-r border-dark-border py-8 pl-6 pr-4 custom-scrollbar lg:block">
+<div class="space-y-8">
+<div>
+<h3 class="mb-3 px-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">Getting Started</h3>
+<ul class="space-y-1">
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Introduction</a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Quickstart</a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Installation</a></li>
+</ul>
+</div>
+<div>
+<h3 class="mb-3 px-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">Core Concepts</h3>
+<ul class="space-y-1">
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Architecture</a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Configuration</a></li>
+<li><a class="flex items-center gap-2 rounded-lg bg-primary/10 px-2 py-1.5 text-sm font-semibold text-primary" href="#">
+<span class="material-symbols-outlined text-[18px]">settings_input_component</span>
+                            Middleware
+                        </a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Routing</a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Error Handling</a></li>
+</ul>
+</div>
+<div>
+<h3 class="mb-3 px-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">API Reference</h3>
+<ul class="space-y-1">
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">Endpoints</a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">SDKs</a></li>
+<li><a class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm font-medium text-zinc-400 hover:bg-zinc-900 hover:text-white transition-colors" href="#">CLI</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0 px-4 py-8 md:px-12 lg:py-12">
+<!-- Breadcrumbs -->
+<nav class="mb-6 flex items-center gap-2 text-xs font-medium text-zinc-500">
+<a class="hover:text-white" href="#">Docs</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-white" href="#">Core Concepts</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-zinc-200">Middleware</span>
+</nav>
+<!-- Page Heading -->
+<div class="mb-10">
+<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<h1 class="text-4xl font-black tracking-tight text-white lg:text-5xl">Middleware</h1>
+<button class="flex h-9 items-center gap-2 rounded-lg border border-dark-border bg-dark-surface px-4 text-xs font-bold text-zinc-300 hover:bg-zinc-900 hover:text-white transition-all">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+                        Edit Page
+                    </button>
+</div>
+<p class="mt-4 max-w-2xl text-lg text-zinc-400 leading-relaxed">
+                    Learn how to intercept and modify requests in the DocGenie pipeline. Middleware allows you to inject custom logic into the request/response lifecycle.
+                </p>
+</div>
+<!-- Tabs -->
+<div class="mb-8 border-b border-dark-border">
+<div class="flex gap-8">
+<button class="border-b-2 border-primary pb-3 text-sm font-bold text-white">JavaScript</button>
+<button class="border-b-2 border-transparent pb-3 text-sm font-medium text-zinc-500 hover:text-zinc-300">TypeScript</button>
+<button class="border-b-2 border-transparent pb-3 text-sm font-medium text-zinc-500 hover:text-zinc-300">Python</button>
+</div>
+</div>
+<!-- Content Section -->
+<div class="prose prose-invert max-w-none">
+<h2 class="text-2xl font-bold text-white mb-4">Introduction</h2>
+<p class="text-zinc-400 mb-6 leading-relaxed">
+                    Middleware functions are functions that have access to the request object, the response object, and the next middleware function in the application’s request-response cycle. These functions can execute any code, make changes to the request and response objects, end the request-response cycle, and call the next middleware function in the stack.
+                </p>
+<!-- Code Block -->
+<div class="group relative my-8 overflow-hidden rounded-xl border border-dark-border bg-[#050505]">
+<div class="flex items-center justify-between bg-zinc-900/50 px-4 py-2 text-xs font-mono text-zinc-400">
+<span>example-middleware.js</span>
+<button class="flex items-center gap-1.5 hover:text-white">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+                            Copy
+                        </button>
+</div>
+<pre class="overflow-x-auto p-6 text-sm font-mono leading-relaxed"><code class="block text-zinc-300"><span class="code-syntax-comment">// Define a custom middleware function</span>
+<span class="code-syntax-keyword">const</span> <span class="code-syntax-function">authMiddleware</span> = (req, res, next) =&gt; {
+  <span class="code-syntax-keyword">const</span> token = req.headers[<span class="code-syntax-string">'x-access-token'</span>];
+
+  <span class="code-syntax-keyword">if</span> (!token) {
+    <span class="code-syntax-keyword">return</span> res.status(<span class="number">403</span>).send({ message: <span class="code-syntax-string">'No token provided!'</span> });
+  }
+
+  <span class="code-syntax-comment">// Proceed to the next middleware</span>
+  <span class="code-syntax-function">next</span>();
+};
+
+<span class="code-syntax-keyword">export default</span> authMiddleware;</code></pre>
+</div>
+<!-- Info Callout -->
+<div class="my-8 flex gap-4 rounded-xl border border-primary/30 bg-primary/5 p-6">
+<div class="shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]">info</span>
+</div>
+<div>
+<h4 class="text-base font-bold text-zinc-100">Pro-tip: Order Matters</h4>
+<p class="mt-1 text-sm text-zinc-400 leading-relaxed">
+                            Middleware execution order is determined by the order in which they are registered. Always place authentication and validation layers before data processing or resource-heavy tasks to optimize performance and security.
+                        </p>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-white mt-12 mb-4">Implementation</h2>
+<p class="text-zinc-400 mb-6 leading-relaxed">
+                    To register a middleware globally, use the <code class="rounded bg-zinc-800 px-1.5 py-0.5 text-primary text-sm font-mono">app.use()</code> function. For route-specific middleware, pass the function as an argument before the route handler.
+                </p>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex items-center justify-between border-t border-dark-border pt-8">
+<a class="group flex flex-col items-start gap-1" href="#">
+<span class="text-xs text-zinc-500 font-medium">Previous</span>
+<span class="flex items-center gap-1 text-sm font-bold text-zinc-300 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Configuration
+                    </span>
+</a>
+<a class="group flex flex-col items-end gap-1" href="#">
+<span class="text-xs text-zinc-500 font-medium">Next</span>
+<span class="flex items-center gap-1 text-sm font-bold text-zinc-300 group-hover:text-primary transition-colors">
+                        Routing
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</span>
+</a>
+</div>
+</main>
+<!-- Right Sidebar (Table of Contents) -->
+<aside class="sticky top-16 hidden h-[calc(100vh-64px)] w-64 shrink-0 overflow-y-auto py-12 pr-6 pl-4 lg:block">
+<div class="space-y-4">
+<h4 class="text-xs font-bold uppercase tracking-wider text-zinc-200">On this page</h4>
+<ul class="space-y-3 text-sm">
+<li><a class="block text-primary font-medium" href="#">Introduction</a></li>
+<li><a class="block text-zinc-500 hover:text-zinc-300 transition-colors" href="#">Core Concepts</a></li>
+<li><a class="block text-zinc-500 hover:text-zinc-300 transition-colors" href="#">Usage Examples</a></li>
+<li><a class="block text-zinc-500 hover:text-zinc-300 transition-colors pl-4 border-l border-dark-border" href="#">Basic Example</a></li>
+<li><a class="block text-zinc-500 hover:text-zinc-300 transition-colors pl-4 border-l border-dark-border" href="#">Advanced Logging</a></li>
+<li><a class="block text-zinc-500 hover:text-zinc-300 transition-colors" href="#">Error Handling</a></li>
+<li><a class="block text-zinc-500 hover:text-zinc-300 transition-colors" href="#">Best Practices</a></li>
+</ul>
+</div>
+<div class="mt-12 rounded-xl border border-dark-border bg-dark-surface p-5">
+<p class="text-xs font-bold text-zinc-200">Need help?</p>
+<p class="mt-2 text-xs text-zinc-500 leading-normal">Our team is available for professional support and architectural guidance.</p>
+<button class="mt-4 w-full rounded-lg bg-zinc-800 py-2 text-xs font-bold text-white hover:bg-zinc-700 transition-colors">Contact Sales</button>
+</div>
+</aside>
+</div>
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "siteName": "DocGenie",
+  "accentColor": "#6366f1",
+  "darkModeDefault": true,
+  "showToc": true,
+  "docsDir": "docs",
+  "outDir": "dist",
+  "logoPath": null
+}
